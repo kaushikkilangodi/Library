@@ -1,0 +1,54 @@
+:root{
+    --colour-primary:rgb(17, 144, 218);
+    --colour-secondary: rgb(5, 106, 238);
+}
+
+.bg-primary{
+    background-color: var(--colour-primary);
+}
+.bg-secondary{
+    background-color: var(--colour-secondary);
+}
+.bg-white{
+    background-color: white;
+}
+
+.text-primary{
+    color:var(--colour-primary);
+}
+.text-secondary{
+    color: var(--colour-secondary);
+}
+.border-primary{
+    border-color: var(--colour-primary);
+}
+.border-secondary{
+    border-color: var(--colour-secondary);
+}
+.border-radius{
+    border-radius: 40%;
+}
+.text-black{
+    color: black;
+}
+.text-white{
+    color: white;
+}
+.text-sm{
+    font-size: 14px;
+}
+.text-md{
+    font-size: 16px;
+}
+.text-lg{
+    font-size: 18px;
+}
+.text-xl{
+    font-size: 20px;
+}
+.text-2xl{
+    font-size: 24px;
+}
+.text-3xl{
+    font-size: 28px;
+}
