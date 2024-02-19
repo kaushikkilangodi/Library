@@ -15,6 +15,7 @@ import './stylesheets/form-elements.css';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useSelector } from 'react-redux';
 import Loader from './components/Loader';
+import BookDescription from './pages/BookDescription';
 function App() {
   const {loading}= useSelector((state)=>state.loaders);
   return (
@@ -25,6 +26,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path='/book/:id' element={<ProtectedRoute><BookDescription /></ProtectedRoute>} />
           <Route path='/profile' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />

@@ -3,52 +3,60 @@
     --colour-secondary: rgb(5, 106, 238);
 }
 
-.bg-primary{
+
+
+.bg-primary {
     background-color: var(--colour-primary);
 }
-.bg-secondary{
+
+.bg-secondary {
     background-color: var(--colour-secondary);
 }
-.bg-white{
-    background-color: white;
+
+.bg-white {
+    background-color: #fff;
 }
 
-.text-primary{
-    color:var(--colour-primary);
+.text-primary {
+    color: var(--colour-primary);
 }
-.text-secondary{
+
+.text-secondary {
     color: var(--colour-secondary);
 }
-.border-primary{
+
+.border-primary {
     border-color: var(--colour-primary);
 }
-.border-secondary{
+
+.border-secondary {
     border-color: var(--colour-secondary);
 }
-.border-radius{
-    border-radius: 40%;
+
+.text-white {
+    color: #fff;
 }
-.text-black{
-    color: black;
-}
-.text-white{
-    color: white;
-}
-.text-sm{
+
+.text-sm {
     font-size: 14px;
 }
-.text-md{
+
+.text-md {
     font-size: 16px;
 }
-.text-lg{
+
+.text-lg {
     font-size: 18px;
 }
-.text-xl{
+
+.text-xl {
     font-size: 20px;
 }
-.text-2xl{
+
+.text-2xl {
     font-size: 24px;
 }
-.text-3xl{
+
+.text-3xl {
     font-size: 28px;
 }
