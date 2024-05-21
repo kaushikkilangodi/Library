@@ -44,9 +44,9 @@ export const GetAllUsers = async (role) => {
 
 // get user by id
 
-export const GetUserById = async (id) => {
+export const GetUserById = async (usn) => {         //id
   try {
-    const response = await axiosInstance.get(`/api/users/get-user-by-id/${id}`);
+    const response = await axiosInstance.get(`/api/users/get-user-by-id/${usn}`);//id
     return response.data;
   } catch (error) {
     throw error;

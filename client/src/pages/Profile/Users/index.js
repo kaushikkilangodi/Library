@@ -43,8 +43,8 @@ function Users({role}) {
       dataIndex:"name",
     },
     {
-      title:"Email",
-      dataIndex:"email",
+      title:"USN",
+      dataIndex:"usn",      //email earliier
     },
     {
       title:"Phone",

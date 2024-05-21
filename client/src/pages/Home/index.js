@@ -1,9 +1,9 @@
-import { Col, message, Row, Table, Badge } from "antd";
-import React, { useEffect, useState } from "react";
+import { Col, message, Row, Badge } from "antd";
+import React, { useEffect,  } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { DeleteBook, GetAllBooks } from "../../apicalls/books";
-import Button from "../../components/Button";
+import {  GetAllBooks } from "../../apicalls/books";
+// import Button from "../../components/Button";
 import { HideLoading, ShowLoading } from "../../redux/loadersSlice";
 
 function Home() {
@@ -43,7 +43,7 @@ function Home() {
                 color={book.availableCopies > 0 ? "green" : "red"}
               >
                 <div className="rounded bg-white p-2 shadow flex flex-col gap-1">
-                  <img src={book.image} height="350px" />
+                  {/* <img src={book.image} height="350px" /> */}
                   <h1 className="text-md text-secondary uppercase font-bold mt-2">
                     {book.title}
                   </h1>

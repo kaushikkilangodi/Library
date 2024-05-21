@@ -11,7 +11,7 @@ function BookForm({ open, setOpen,reloadBooks,setFormType,formType,selectedBook,
     const onFinish = async (values) => {
         try {
             dispatch(ShowLoading())
-            values.createdBy = user._id;
+            values.createdBy = user._id ;    //._id
             
             let response = null
             if(formType ==="add"){

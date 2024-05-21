@@ -46,7 +46,7 @@ function BookDescription() {
           </h1>
           <hr />
           <div className="flex justify-center">
-            <img src={bookData.image} alt="" height={400} width={400} />
+            {/* <img src={bookData.image} alt="" height={400} width={400} /> */}
           </div>
 
           <p>{bookData?.description}</p>

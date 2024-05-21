@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { message, Modal, Table } from "antd";
+import { message,  Table } from "antd";
 import { GetIssues } from "../../../apicalls/issues";
 import { HideLoading, ShowLoading } from "../../../redux/loadersSlice";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import Button from "../../../components/Button";
+// import Button from "../../../components/Button";
 
-function IssuedBooks() {
+function  IssuedBooks() {
   const {user} = useSelector((state) => state.users);
   const [issuedBooks, setIssuedBooks] = React.useState([]);
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function IssuedBooks() {
     try {
       dispatch(ShowLoading());
       const response = await GetIssues({
-        user: user._id,
+        user: user.usn,//_id
       });
       dispatch(HideLoading());
       if (response.success) {
@@ -32,8 +32,8 @@ function IssuedBooks() {
 
   const columns = [
     {
-      title: "Id",
-      dataIndex: "_id",
+      title: "",
+      dataIndex: "usn",
     },
     {
       title: "Book",

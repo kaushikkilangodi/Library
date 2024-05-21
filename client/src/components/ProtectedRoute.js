@@ -1,10 +1,11 @@
-import { message } from "antd";
+import { message,Button } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { GetLoggedInUserDetails } from "../apicalls/users";
 import { HideLoading, ShowLoading } from "../redux/loadersSlice";
 import { SetUser } from "../redux/usersSlice";
+
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
@@ -47,8 +48,14 @@ function ProtectedRoute({ children }) {
           <div className="header p-2 bg-primary flex justify-between rounded items-center">
             <h1 className="text-2xl text-white font-bold cursor-pointer"
              onClick={() => navigate("/")}
-            >SHEY LIBRARY</h1>
-
+            >MCA LIBRARY</h1>
+             <Button className="bg-white" 
+    type="button"
+    onClick={(e) => {
+      e.preventDefault();
+      window.location.href='https://drive.google.com/drive/folders/12mqrvdYpDginZDdfRdlt62PzCxJMCv7W';
+      }}
+> Question Bank</Button>
             <div className="flex items-center gap-1 bg-white p-1 rounded">
               <i className="ri-shield-user-line "></i>
               <span

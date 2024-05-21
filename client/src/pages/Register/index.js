@@ -52,7 +52,15 @@ function Register() {
             ]}>
               <input type='text' placeholder='Name' />
             </Form.Item>
-
+            <Form.Item label='USN' name='usn'
+             rules={[
+              {
+                required:true,                          //usn
+                message:'Please input your USN',
+              },
+            ]}>
+              <input type='usn' placeholder='USN' />
+            </Form.Item>
             <Form.Item label='Email' name='email'
              rules={[
               {

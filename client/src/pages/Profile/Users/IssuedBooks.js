@@ -4,7 +4,7 @@ import { GetIssues } from '../../../apicalls/issues';
 import { HideLoading, ShowLoading } from '../../../redux/loadersSlice';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
-import Button from '../../../components/Button';
+// import Button from '../../../components/Button';
 
 function IssuedBooks({showIssuedBooks, setShowIssuedBooks,selectedUser}) {
   const[issuedBooks,setIssuedBooks]=React.useState([]);
@@ -13,7 +13,7 @@ function IssuedBooks({showIssuedBooks, setShowIssuedBooks,selectedUser}) {
     try {
         dispatch(ShowLoading());
         const response=await GetIssues({
-            user:selectedUser._id,
+            user:selectedUser._id,          //_id
         });
         dispatch(HideLoading());
         if(response.success){
@@ -30,8 +30,8 @@ function IssuedBooks({showIssuedBooks, setShowIssuedBooks,selectedUser}) {
    }, []);
    const columns=[
     {
-        title:"Id",
-        dataIndex:"_id",
+        title:"USN",
+        dataIndex:"usn",        //_id
 
     },
     {
@@ -50,10 +50,10 @@ function IssuedBooks({showIssuedBooks, setShowIssuedBooks,selectedUser}) {
         dataIndex:"returnDate",
         render:(dueDate)=> moment(dueDate).format("DD-MM-YYYY"),
     },
-    {
-        title:"Rent",
-        dataIndex:"rent",
-    },
+    // {
+    //     title:"Rent",
+    //     dataIndex:"rent",
+    // },
     // {
     //     title:"Fine",
     //     dataIndex:"fine"
@@ -79,7 +79,7 @@ function IssuedBooks({showIssuedBooks, setShowIssuedBooks,selectedUser}) {
     footer={null}
     width={1400}>
         <h1 className='text-secondary mb-1 text-xl text-center font-bold uppercase'>
-            {selectedUser.name}'s ISsued Books
+            {selectedUser.name}'s Issued Books
         </h1>
 
         <Table columns={columns} dataSource={issuedBooks}/>

@@ -84,8 +84,8 @@ function Issues({ open = false, setOpen, selectedBook, reloadBooks }) {
 
   const columns = [
     {
-      title: "Id",
-      dataIndex: "_id",
+      title: "Name",
+      dataIndex: "usn",    //USN
       render: (_id, record) => (
         <div className="flex flex-col">
           <span>{_id}</span>
@@ -103,18 +103,18 @@ function Issues({ open = false, setOpen, selectedBook, reloadBooks }) {
       dataIndex: "returnDate",
       render: (dueDate) => moment(dueDate).format("DD-MM-YYYY hh:mm A"),
     },
-    {
-      title: "Amount",
-      dataIndex: "rent",
-      render: (rent, record) => (
-        <div className="flex flex-col">
-          <span>Rent : {record.rent}</span>
-          <span className="text-xs text-gray-500">
-            Fine : {record.fine || 0}
-          </span>
-        </div>
-      ),
-    },
+    // {
+    //   // title: "Amount",
+    //   // dataIndex: "rent",
+    //   // render: (rent, record) => (
+    //   //   <div className="flex flex-col">
+    //   //     <span>Rent : {record.rent}</span>
+    //   //     <span className="text-xs text-gray-500">
+    //   //       Fine : {record.fine || 0}
+    //   //     </span>
+    //     //</div>
+    //  // ),
+    // },
     {
       title: "Returned On",
       dataIndex: "returnedDate",

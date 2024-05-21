@@ -12,6 +12,10 @@ function BasicDetails() {
           <h1 className="text-md">{user.name}</h1>
         </div>
         <div className="flex justify-between">
+          <h1 className="text-md">USN</h1>
+          <h1 className="text-md">{user.usn}</h1>
+        </div>
+        <div className="flex justify-between">
           <h1 className="text-md">Email</h1>
           <h1 className="text-md">{user.email}</h1>
         </div>

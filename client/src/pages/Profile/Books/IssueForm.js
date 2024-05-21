@@ -21,7 +21,7 @@ function IssueForm({
   const [errorMessage, setErrorMessage] = React.useState("");
   const [patronData, setPatronData] = useState(null);
   const [patronId, setPatronId] = React.useState(
-    type === "edit" ? selectedIssue.user._id : ""
+    type === "edit" ? selectedIssue.user.usn : ""
   );
   const [returnDate, setReturnDate] = React.useState(
     type === "edit" ? moment(selectedIssue.returnDate).format("YYYY-MM-DD") : ""
@@ -62,14 +62,14 @@ function IssueForm({
       if (type !== "edit") {
         response = await IssueBook({
           book: selectedBook._id,
-          user: patronData._id,
+          user: patronData._id,       // _id
           issueDate: new Date(),
           returnDate,
           rent:
             moment(returnDate).diff(moment(), "days") *
             selectedBook?.rentPerDay,
           fine: 0,
-          issuedBy: user._id,
+          issuedBy: user.usn, //._id
         });
       } else {
         response = await EditIssue({
@@ -81,7 +81,7 @@ function IssueForm({
             moment(returnDate).diff(moment(), "days") *
             selectedBook?.rentPerDay,
           fine: 0,
-          issuedBy: user._id,
+          issuedBy: user.usn,//._id
           _id: selectedIssue._id,
         });
       }
@@ -125,10 +125,10 @@ function IssueForm({
           {type === "edit" ? "Edit / Renew Issue" : "Issue Book"}
         </h1>
         <div>
-          <span>Patron Id </span>
+          <span>User Id </span>     {/*Patron Id*/}
           <input
-            type="text"
-            value={patronId}
+            type="text"   
+            value={patronId}  //usn
             onChange={(e) => setPatronId(e.target.value)}
             placeholder="Patron Id"
             disabled={type === "edit"}
@@ -153,12 +153,12 @@ function IssueForm({
             <h1>
               Number Of Days : {moment(returnDate).diff(moment(), "days")}
             </h1>
-            <h1>Rent per Day : {selectedBook.rentPerDay}</h1>
-            <h1>
+            {/* <h1>Rent per Day : {selectedBook.rentPerDay}</h1> */}
+            {/* <h1>
               Rent :{" "}
               {moment(returnDate).diff(moment(), "days") *
                 selectedBook?.rentPerDay}
-            </h1>
+            </h1> */}
           </div>
         )}
 
@@ -171,7 +171,7 @@ function IssueForm({
           {type === "add" && (
             <Button
               title="Validate"
-              disabled={patronId === "" || returnDate === ""}
+              disabled={patronId === "" || returnDate === ""}   ///////patronId
               onClick={validate}
             />
           )}
